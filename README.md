@@ -24,7 +24,7 @@ Refer to the documentation on https://screensnaps.io/docs/intro on how to make c
 
 use TeamGC\ScreensnapsIO;
 
-$screensnapsIO = new ScreensnapsIO(["apiKey" => API_KEY_HERE, "userId" => USERID]);
+$screensnapsIO = new ScreensnapsIO(["apiKey" => API_KEY_HERE, "userId" => USER_ID_HERE]);
 
 ```
 
