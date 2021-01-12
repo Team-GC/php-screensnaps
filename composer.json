@@ -1,0 +1,43 @@
+{
+  "name": "team-gc/php-screensnaps",
+  "description": "A simple PHP Library to interact with the screensnaps.io service",
+  "keywords": [
+    "team-gc",
+    "php-screensnaps"
+  ],
+  "homepage": "https://github.com/team-gc/php-screensnaps",
+  "license": "MIT",
+  "type": "library",
+  "authors": [
+    {
+      "name": "Greg Avola",
+      "email": "gregory.avola@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^7.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.5",
+    "vlucas/phpdotenv": "^5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "TeamGC\\ScreensnapsIO\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "TeamGC\\ScreensnapsIO\\Tests\\": "tests",
+      "TeamGC\\ScreensnapsIO\\": "src"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}
