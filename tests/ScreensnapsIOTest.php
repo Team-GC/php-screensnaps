@@ -8,6 +8,7 @@ class ScreensnapsIOTest extends TestCase
 {
     protected function setUp(): void
     {
+        print_r($_SERVER);
         if (!getenv("API_KEY")) {
             $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
             $dotenv->load();
