@@ -3,8 +3,7 @@
   "description": "A simple PHP Library to interact with the screensnaps.io service",
   "keywords": [
     "team-gc",
-    "php-screensnaps",
-    "screenshots"
+    "php-screensnaps"
   ],
   "homepage": "https://github.com/team-gc/php-screensnaps",
   "license": "MIT",
@@ -35,7 +34,8 @@
     }
   },
   "scripts": {
-    "test": "vendor/bin/phpunit"
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
   },
   "config": {
     "sort-packages": true
