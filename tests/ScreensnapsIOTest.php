@@ -8,14 +8,16 @@ class ScreensnapsIOTest extends TestCase
 {
     protected function setUp(): void
     {
-        $dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-        $dotenv->load();
+        if (!getenv("API_KEY")) {
+            $dotenv = \Dotenv\Dotenv::createUnsafeImmutable(__DIR__);
+            $dotenv->load();
+        }
     }
 
     public function testLibrary(): void
     {
         try {
-            if (isset($_ENV["API_KEY"]) && isset($_ENV["USER_ID"])) {
+            if (getenv("API_KEY") && getenv("USER_ID")) {
                 $this->assertTrue(true);
             } else {
                 $this->fail("You are missing USER_ID OR API_KEY from your .env file");
@@ -27,7 +29,7 @@ class ScreensnapsIOTest extends TestCase
 
     public function testStatus(): void
     {
-        $screensnapsIO = new \TeamGC\ScreensnapsIO\ScreensnapsIO(["apiKey" => $_ENV["API_KEY"], "userId" => $_ENV["USER_ID"]]);
+        $screensnapsIO = new \TeamGC\ScreensnapsIO\ScreensnapsIO(["apiKey" => getenv("API_KEY"), "userId" => getenv("USER_ID")]);
 
         $statusData = $screensnapsIO->status();
 
@@ -40,7 +42,7 @@ class ScreensnapsIOTest extends TestCase
 
     public function testScreenshots(): void
     {
-        $screensnapsIO = new \TeamGC\ScreensnapsIO\ScreensnapsIO(["apiKey" => $_ENV["API_KEY"], "userId" => $_ENV["USER_ID"]]);
+        $screensnapsIO = new \TeamGC\ScreensnapsIO\ScreensnapsIO(["apiKey" => getenv("API_KEY"), "userId" => getenv("USER_ID")]);
 
         $statusData = $screensnapsIO->screenshots(["offset" => 0, "limit" => 15]);
 
