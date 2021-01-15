@@ -1,10 +1,12 @@
 # php-screensnaps
 
+![Build](https://github.com/Team-GC/php-screensnaps/workflows/CI/badge.svg)
+
 A simple php library to interact with the APIs for screenshot generation on screensnaps.io.
 
 ## Requirements
 
-PHP8+
+PHP7+
 CURL
 
 ## Installation
