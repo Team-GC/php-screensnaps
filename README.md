@@ -2,6 +2,11 @@
 
 A simple php library to interact with the APIs for screenshot generation on screensnaps.io.
 
+## Requirements
+
+PHP8+
+CURL
+
 ## Installation
 
 You can install the package via composer:
