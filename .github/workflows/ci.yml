@@ -12,9 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v5 # or alternative dependency management
-    
-      - name: Run Tests
+      - run: composer test tests
         env:
           USER_ID: ${{ secrets.USER_ID }}
           API_KEY: ${{ secrets.API_KEY }}
-        run: composer test tests
+        
